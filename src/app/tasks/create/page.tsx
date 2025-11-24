@@ -39,10 +39,6 @@ export default function CreateTaskPage() {
         },
     });
 
-    if (!isAuthenticated) {
-        return null;
-    }
-
     const onSubmit = async (data: TaskFormValues) => {
         setLoading(true);
         try {
@@ -56,6 +52,10 @@ export default function CreateTaskPage() {
             setLoading(false);
         }
     };
+
+    if (!isAuthenticated) {
+        return null;
+    }
 
     return (
         <div className="container mx-auto py-10 px-4 max-w-2xl">
